@@ -1,0 +1,16 @@
+<?php
+require 'config.php';
+
+$product = [
+    'naam' => 'Samsung S23',
+    'introtekst' => 'De nieuwe Samsung telefoon!',
+    'afbeelding' => 'telefoon.jpg',
+    'ingredienten' => 'S23, S22, S21'
+];
+
+require 'vendor/autoload.php';
+$loader = new \Twig\Loader\FilesystemLoader('templates');
+$twig = new \Twig\Environment($loader);
+
+echo $twig->render('product.twig', ['product' => $product]);
+?>
